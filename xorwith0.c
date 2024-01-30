@@ -3,42 +3,44 @@
 
 void binaryValue(int n) {
     int b[8],x[8];
-
+    int j,k,l;
     // Convert to binary
-    for (int i = 7; i >= 0; i--) {
-        b[i] = n % 2;
+    for ( j = 7; j >= 0; j--) {
+        b[j] = n % 2;
         n = n / 2;
     }
 
     // Print binary representation
-    for (int i = 0; i < 8; i++) {
+  /* for (int i = 0; i < 8; i++) {
         printf("%d\t", b[i]);
-    }
-    printf("\n");
-    for(int i=0;i<8;i++)
+    }*/
+   // printf("\n");
+    for( k=0;k<8;k++)
     {
-        if(b[i]==0)
+        if(b[k]==0)
         {
-            x[i]=0;
+            x[k]=0;
         }
         else{
-            x[i]=1;
+            x[k]=1;
         }
     }
 
     int decimal = 0;
-    for (int i = 0; i < 8; i++) {
-        decimal = decimal * 2 + x[i];
+    for ( l = 0; l < 8; l++) {
+        decimal = decimal * 2 + x[l];
     }
-
-    printf("ASCII: %c\n", (char)decimal);
+  
+    printf("%c", (char)decimal);
 }
 
 int main() {
     char str[100];
+    int i;
+    printf("Enter a String for Xor operation\n");
     scanf("%s", str);
-
-    for (int i = 0; i < strlen(str); i++) {
+      printf("After xor operation\n");
+    for ( i = 0; i < strlen(str); i++) {
         binaryValue((int)str[i]);
     }
 
